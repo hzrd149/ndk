@@ -8,15 +8,25 @@ import { SCHEMA } from "./schema";
 
 const CURRENT_VERSION = 5;
 
+async function hasTable(db: Database, tableName: string): Promise<boolean> {
+    const result = await db.exec(
+        "SELECT 1 FROM sqlite_master WHERE type='table' AND name=? LIMIT 1",
+        [tableName]
+    );
+
+    return Boolean(result[0]?.values?.length);
+}
+
 async function getCurrentVersion(db: Database): Promise<number> {
-    try {
-        const result = await db.exec("SELECT version FROM schema_version LIMIT 1");
-        if (result && result.length > 0 && result[0].values && result[0].values.length > 0) {
-            return result[0].values[0][0] as number;
-        }
-    } catch {
-        // Table doesn't exist, version 0
+    if (!(await hasTable(db, "schema_version"))) {
+        return 0;
     }
+
+    const result = await db.exec("SELECT version FROM schema_version LIMIT 1");
+    if (result && result.length > 0 && result[0].values && result[0].values.length > 0) {
+        return result[0].values[0][0] as number;
+    }
+
     return 0;
 }
 
