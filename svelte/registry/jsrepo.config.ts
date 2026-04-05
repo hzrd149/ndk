@@ -179,7 +179,7 @@ export default defineConfig({
 
 	// Registry configuration (for building THIS registry)
 	registry: ({ cwd }) => ({
-		name: "@nostr/svelte",
+		name: "@ndk/svelte",
 		version: REGISTRY_VERSION,
 		excludeDeps: ["svelte"],
 		defaultPaths: {

@@ -13,7 +13,6 @@
 	import layoutInit from './examples/layout-init.svelte.example?raw';
 	import jsrepoInit from './examples/jsrepo-init.example?raw';
 	import jsrepoConfig from './examples/jsrepo-config.example?raw';
-	import jsrepoInfo from './examples/jsrepo-info.example?raw';
 	import jsrepoAdd from './examples/jsrepo-add.example?raw';
 	import usingComponents from './examples/using-components.svelte.example?raw';
 	import jsrepoUpdate from './examples/jsrepo-update.example?raw';
@@ -23,7 +22,7 @@
 
 <PageTitle
 	title="Installation"
-  subtitle="Complete guide to installing and configuring the @nostr-dev-kit/svelte component registry in your SvelteKit project."
+  subtitle="Complete guide to installing and configuring the @ndk/svelte component registry in your SvelteKit project."
 />
 
 <div class="docs-page">
@@ -110,7 +109,7 @@ cp node_modules/@nostr-dev-kit/cache-sqlite-wasm/dist/worker.js static/"
 				<h2>Step 3: Install jsrepo CLI</h2>
 
 	<p>
-    jsrepo is the package manager for @nostr-dev-kit/svelte components. Install it globally to use across
+    jsrepo installs components from the <code>@ndk/svelte</code> registry. Install it globally to use across
 		projects:
 	</p>
 
@@ -152,7 +151,12 @@ cp node_modules/@nostr-dev-kit/cache-sqlite-wasm/dist/worker.js static/"
 
 	<h3>Browse Available Components</h3>
 
-	<CodeBlock lang="bash" code={jsrepoInfo} />
+	<p>
+		Browse the published registry at <a href="https://www.jsrepo.com/@ndk/svelte">jsrepo.com/@ndk/svelte</a>
+		or explore this site's <a href="/components">component gallery</a> and
+		<a href="/docs/components">component docs</a>, then install the items you want with
+		<code>jsrepo add</code>.
+	</p>
 
 	<h3>Add Components</h3>
 
@@ -347,7 +351,7 @@ cp node_modules/@nostr-dev-kit/cache-sqlite-wasm/dist/worker.js static/"
 				<h2>Step 5: Install jsrepo CLI</h2>
 
 				<p>
-					jsrepo is the package manager for @nostr-dev-kit/svelte components. Install it globally to use across
+					jsrepo installs components from the <code>@ndk/svelte</code> registry. Install it globally to use across
 					projects:
 				</p>
 
@@ -387,7 +391,12 @@ cp node_modules/@nostr-dev-kit/cache-sqlite-wasm/dist/worker.js static/"
 
 				<h3>Browse Available Components</h3>
 
-				<CodeBlock lang="bash" code={jsrepoInfo} />
+				<p>
+					Browse the published registry at <a href="https://www.jsrepo.com/@ndk/svelte">jsrepo.com/@ndk/svelte</a>
+					or explore this site's <a href="/components">component gallery</a> and
+					<a href="/docs/components">component docs</a>, then install the items you want with
+					<code>jsrepo add</code>.
+				</p>
 
 				<h3>Add Components</h3>
 
